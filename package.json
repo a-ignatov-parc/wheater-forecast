@@ -1,0 +1,32 @@
+{
+  "name": "project-plato-weather-app",
+  "version": "1.0.0",
+  "description": "Test assignment for creating a weather forecast application. Check details in README.md",
+  "keywords": [],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.19",
+    "@types/react-dom": "16.9.5",
+    "typescript": "4.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    "Safari >= 11.0",
+    "Firefox >= 70",
+    "iOS >= 11.0",
+    "Edge >= 18",
+    "Chrome >= 60",
+    "ChromeAndroid >= 60",
+    "last 2 Opera versions"
+  ]
+}

@@ -1,5 +1,5 @@
 import * as React from "react";
-import WeatherForecast from "./WeatherForecast";
+import WeatherForecast from "../modules/WeatherForecast";
 
 const App = () => (
   <>

@@ -1,17 +1,20 @@
 import * as React from "react";
-import WeatherForecast from "../modules/WeatherForecast";
+import bemCl from "bem-cl";
+
+import HomePage from "../pages/Home";
+
+import "./App.scss";
+import ErrorBoundary from "../basic/ErrorBoundary";
+
+const b = bemCl("app");
 
 const App = () => (
-  <>
-    <div>
-      {/* Load forecast for today */}
-      <WeatherForecast />
-    </div>
-    <div>
-      {/* Load forecast for tomorrow */}
-      <WeatherForecast />
-    </div>
-  </>
+  <div className={b()}>
+    <ErrorBoundary>
+      <HomePage />
+      {/* ReatRouter + 404 handling */}
+    </ErrorBoundary>
+  </div>
 );
 
 export default App;

@@ -1,0 +1,22 @@
+:root {
+  --spacing-xs: 5px;
+  --spacing-s: 10px;
+
+  --font-families-system-ui: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+
+  --colors-error: #e66157;
+
+  --fonts-body-size: 16px;
+  --fonts-body-line-height: 1.2;
+  --fonts-body-font-familiy: var(--font-families-system-ui);
+}
+
+body {
+  margin: 0;
+  font-size: var(--fonts-body-size);
+  line-height: var(--fonts-body-line-height);
+  font-family: var(--fonts-body-font-familiy);
+  color: #0f0f0f;
+}

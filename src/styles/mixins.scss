@@ -1,0 +1,18 @@
+@mixin resetButton() {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  color: inherit;
+
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;
+  background: none;
+}

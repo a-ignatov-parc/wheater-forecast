@@ -1,0 +1,28 @@
+.weather-forecast-module {
+  max-width: 416px;
+  padding: var(--spacing-s);
+
+  background-color: #ddd;
+
+  & + & {
+    margin-top: var(--spacing-s);
+  }
+
+  html &__load-button {
+    margin-right: var(--spacing-s);
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__value {
+    margin-left: var(--spacing-xs);
+  }
+
+  &__error {
+    margin-left: var(--spacing-xs);
+
+    color: var(--colors-error);
+  }
+}

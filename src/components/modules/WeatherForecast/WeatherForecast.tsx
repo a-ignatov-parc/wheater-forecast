@@ -15,13 +15,8 @@ type Props = {
 
 const b = bemCl("weather-forecast-module");
 
-const WeatherForecastModule = <
-  TData extends { value: string; [key: string]: unknown }
->({
-  title,
-  apiMethod,
-}: Props) => {
-  const { fetch, state, data, isFetched } = useFetch<TData>(title, apiMethod);
+const WeatherForecastModule = ({ title, apiMethod }: Props) => {
+  const { fetch, state, data, isFetched } = useFetch(title, apiMethod);
 
   const handleLoadButtonClick = () => {
     fetch();

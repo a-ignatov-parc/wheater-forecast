@@ -1,8 +1,12 @@
 import { act, renderHook } from "@testing-library/react-hooks";
-import useFetch from "../useFetch";
+import useFetch, { Data } from "../useFetch";
 
 it("should return an oject with default state", () => {
-  const apiMethod = jest.fn();
+  const apiMethod: jest.Mock<Promise<Data>> = jest.fn().mockImplementation(() =>
+    Promise.resolve({
+      value: "Cloudy",
+    })
+  );
   const {
     result: { current },
   } = renderHook(() => useFetch("key", apiMethod));

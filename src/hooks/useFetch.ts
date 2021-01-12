@@ -2,10 +2,14 @@ import { useReducer } from "react";
 
 import logger from "../libs/logger";
 
-type State<TData> = {
+export type Data = {
+  value: string;
+};
+
+type State = {
   state: "idle" | "loading" | "updating" | "error";
   isFetched: boolean;
-  data: TData | null;
+  data: Data | null;
   error: Error | null;
 };
 
@@ -13,9 +17,9 @@ type LoadingAction = {
   type: "LOADING";
 };
 
-type SuccessAction<TData> = {
+type SuccessAction = {
   type: "SUCCESS";
-  data: TData;
+  data: Data;
 };
 
 type FailureAction = {
@@ -23,12 +27,9 @@ type FailureAction = {
   error: Error;
 };
 
-type Action<TData> = LoadingAction | SuccessAction<TData> | FailureAction;
+type Action = LoadingAction | SuccessAction | FailureAction;
 
-const createReducer = <TData>() => (
-  state: State<TData>,
-  action: Action<TData>
-): State<TData> => {
+const createReducer = () => (state: State, action: Action): State => {
   switch (action.type) {
     case "LOADING": {
       return {
@@ -58,11 +59,8 @@ const createReducer = <TData>() => (
   }
 };
 
-const useFetch = <TData extends unknown>(
-  key: string,
-  apiMethod: () => Promise<TData>
-) => {
-  const reducer = createReducer<TData>();
+const useFetch = (key: string, apiMethod: () => Promise<Data>) => {
+  const reducer = createReducer();
   const [{ state, data, error, isFetched }, dispatch] = useReducer(reducer, {
     state: "idle",
     isFetched: false,

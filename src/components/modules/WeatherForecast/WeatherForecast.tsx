@@ -6,22 +6,24 @@ import useFetch from "../../../hooks/useFetch";
 import LoadButton from "./components/LoadButton";
 import "./WeatherForecast.scss";
 
+type Response = {
+  value: string
+}
+
 type Props = {
   // Title of a given forecast
   title: string;
   // Method to fetch data
-  apiMethod: () => Promise<any>;
+  apiMethod: () => Promise<Response>;
 };
 
 const b = bemCl("weather-forecast-module");
 
-const WeatherForecastModule = <
-  TData extends { value: string; [key: string]: unknown }
->({
+const WeatherForecastModule = ({
   title,
   apiMethod,
 }: Props) => {
-  const { fetch, state, data, isFetched } = useFetch<TData>(title, apiMethod);
+  const { fetch, state, data, isFetched } = useFetch(title, apiMethod);
 
   const handleLoadButtonClick = () => {
     fetch();
